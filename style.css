@@ -32,11 +32,11 @@ img {
     width: 100%;
     max-width: 1200px; /* 시안 기준 너비 */
     margin: 0 auto;    /* 중앙 정렬 */
-    padding: 80px 20px; /* 섹션 간 간격 */
+    padding: 60px 20px; /* 섹션 간 간격 */
     
 }
 .container h3{
-    font-size: 60px;
+    font-size: 50px;
     
 }
 .container > p{
@@ -85,13 +85,13 @@ header .phone{
 .hero {
     position: relative; /* 영상과 오버레이의 기준점 */
     width: 96%;
-    height: 800px;
+    height: 760px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden; /* 영상이 삐져나가지 않게 */
     color: #fff;
-    margin: 100px auto;
+    margin: 100px auto 70px;
     border-radius: 20px;
 }
 /* 영상 컨테이너 */
@@ -128,27 +128,27 @@ header .phone{
 }
 
 .hero-content h1 {
-    font-size: 5rem; /* 시안에 맞춰 조절 */
+    font-size: 4rem; /* 시안에 맞춰 조절 */
     font-weight: 900;
     letter-spacing: 2px;
     margin-bottom: 20px;
     padding-top: 50px;
 }
 .hero-content p{
-    font-size: 30px;
+    font-size: 24px;
     margin-bottom: 70px;
 }
 .hero-content .view-project {
     display: inline-flex; /* 텍스트와 화살표(⌵) 수직 중앙 정렬 */
     justify-content: center;
     align-items: center;
-    width: 170px; /* 버튼의 지름 (동그란 원의 크기) */
-    height: 170px; 
+    width: 140px; /* 버튼의 지름 (동그란 원의 크기) */
+    height: 140px; 
     border-radius: 50%; /* 완벽한 원형 생성 */
     
     /* 시안처럼 폰트 스타일링 */
     font-family: 'Montserrat', sans-serif; /* 영문 Montserrat 폰트 사용 추천 */
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     letter-spacing: 1px; /* 자간을 살짝 벌려 세련미 추가 */
     text-decoration: none; /* a 태그 밑줄 제거 */
@@ -202,11 +202,11 @@ header .phone{
     display: flex;
     justify-content: space-between; /* 좌우 끝으로 밀기 */
     align-items: flex-start;
-    margin-bottom: 80px; /* 상단과 하단 사이 간격 */
+    margin-bottom: 70px; /* 상단과 하단 사이 간격 */
 }
 
 .about-top h2 {
-    font-size: 60px; /* 시안처럼 큼직하게 */
+    font-size: 50px; /* 시안처럼 큼직하게 */
     font-weight: bold;
     flex: 1; /* 왼쪽 공간 차지 */
 }
@@ -280,10 +280,10 @@ header .phone{
     text-align: center;
     width: 100%;
     overflow: hidden; 
-    padding: 130px 0 100px; /* 위아래 여백을 더 넓게 해서 궤도 공간 확보 */
+    padding: 130px 0 40px; /* 위아래 여백을 더 넓게 해서 궤도 공간 확보 */
 }
 .skills h3{
-    font-size: 60px;
+    font-size: 50px;
 }
 .skills p{
     padding-top: 10px;
@@ -330,14 +330,14 @@ header .phone{
 /* UXUI 섹션 전체 스타일 */
 /* 1. 리스트 및 아이템 기본 레이아웃 */
 .uxui-section{
-    padding: 100px 0 120px;
+    padding: 70px 0 120px;
 }
 
 
 .uxui-header {
     width: 100%;
     text-align: center; /* 텍스트 중앙 */
-    margin-bottom: 80px;
+    margin-bottom: 55px;
     display: flex;
     flex-direction: column;
     align-items: center; /* 내부 요소들 가로 중앙 */
@@ -345,7 +345,7 @@ header .phone{
 }
 
 .uxui-header h3 {
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 800;
     margin-bottom: 15px;
 }
@@ -382,13 +382,13 @@ header .phone{
 
 /* 3. 비디오 박스 (요청 수치: 640px + 5px = 645px) */
 .uxui-video-box {
-    flex: 0 0 645px; /* 645px로 확장 */
-    width: 645px;
-    height: 430px; /* 높이는 430px 유지 */
+    flex: 0 0 500px; /* 645px로 확장 */
+    width: 500px;
+    height: 330px; /* 높이는 430px 유지 */
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    background-color: #000;
+   
+    background-color: #d4d4d4;
 }
 
 .uxui-video-box video {
@@ -445,8 +445,7 @@ header .phone{
 
 .btn-fill:hover {
     background-color: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,122,255,0.3);
+    
 }
 
 .btn-outline {
@@ -462,7 +461,7 @@ header .phone{
 
 .btn-outline:hover {
     background-color: rgba(0, 122, 255, 0.05);
-    transform: translateY(-2px);
+   
 }
 
 /* 6. 반응형 모바일 */
@@ -522,12 +521,15 @@ header .phone{
 }
 
 /* 3. 개별 프로젝트 아이템 (너비를 50%에서 gap을 뺀 만큼 설정) */
-.web-project-item01 {
+.web-project-item {
     width: calc(50% - 20px); /* 한 줄에 두 개씩 배치 */
     text-align: left;
 }
+.web-project-item :hover {
+    cursor: pointer;
+}
 
-.web-project-item01 img {
+.web-project-item img {
     width: 100%;
     height: auto;
     border-radius: 20px;
@@ -536,15 +538,19 @@ header .phone{
     transition: all 0.3s ease;
     
 }
+.web-project-item:hover img{
+    filter: brightness(0.9);
+    transform: scale(1.01);
+}
 
 
-.web-project-item01 h4 {
+.web-project-item h4 {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 12px;
 }
 
-.web-project-item01 p {
+.web-project-item p {
     font-size: 15px;
     line-height: 1.6;
     margin-bottom: 5px; /* 설명 텍스트 간격 조절 */
@@ -558,14 +564,16 @@ header .phone{
 }
 
 .web .btns .blue-btn {
-    width: 140px; /* 버튼이 너무 길지 않게 고정 너비 지정 */
-    padding: 12px 0;
+    width: 130px; /* 버튼이 너무 길지 않게 고정 너비 지정 */
+    padding: 10px 0;
     border-radius: 10px;
     background-color: #007AFF;
     color: #fff;
     border: none;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
+    text-align: center;
+    font-size: 14px;
 }
 .web .btns .blue-btn:hover {
     background-color: #0056b3;
@@ -600,12 +608,15 @@ header .phone{
 }
 
 /* 3. 개별 아이템 (50%에서 간격 절반 뺀 값) */
-.work-project-item01 {
+.work-project-item {
     width: calc(50% - 20px); /* 2열 배치의 핵심 */
     text-align: left;
 }
+.work-project-item:hover{
+    cursor: pointer;
+}
 
-.work-project-item01 img {
+.work-project-item img {
     width: 100%;
     /* 2단일 때는 4:3이나 16:9 비율이 시원해 보입니다 */
     aspect-ratio: 16 / 10; 
@@ -614,16 +625,20 @@ header .phone{
     margin-bottom: 24px;
     transition: 0.3s ease;
 }
+.work-project-item:hover img{
+    filter: brightness(0.9);
+    transform: scale(1.01);
+}
 
 
-.work-project-item01 h4 {
+.work-project-item h4 {
     font-size: 28px; /* 이미지가 커진 만큼 제목 크기도 살짝 키웠습니다 */
     font-weight: 700;
     margin-bottom: 12px;
     color: #222;
 }
 
-.work-project-item01 p {
+.work-project-item p {
     font-size: 15px;
     line-height: 1.7;
     margin-bottom: 6px;
@@ -631,16 +646,18 @@ header .phone{
 }
 
 /* 4. 버튼 정렬 */
+.commercial-work .btns{
+    margin-top: 25px;
+}
 .commercial-work .blue-btn {
     width: 140px;
-    padding: 12px 0;
+    padding: 12px 20px;
     border-radius: 10px;
     background-color: #007AFF;
     color: #fff;
     border: none;
     font-weight: 600;
     cursor: pointer;
-    margin-top: 20px;
 }
 .blue-btn:hover {
     background-color: #0056b3;
