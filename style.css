@@ -1,0 +1,716 @@
+/*-초기화-*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+     font-family: 'Pretendard', sans-serif; line-height: 1.6;
+      color: black; 
+    }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/*-------공통 레이아웃 컨테이너 -----------*/
+.container {
+    width: 100%;
+    max-width: 1200px; /* 시안 기준 너비 */
+    margin: 0 auto;    /* 중앙 정렬 */
+    padding: 80px 20px; /* 섹션 간 간격 */
+    
+}
+.container h3{
+    font-size: 60px;
+    
+}
+.container > p{
+    text-align: center;
+}
+/*------header------------*/
+header {
+    
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: rgba(255,255,255,0.9);
+    z-index: 1000;
+    color: black;
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 48px;
+}
+
+header h1{
+    font-size: 24px;
+    color: #333;
+}
+header ul li a{
+    font-size: 18px;
+    font-weight: 450;
+}
+header .phone{
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    background-color: white;
+}
+
+/*------hero------------*/
+.hero {
+    position: relative; /* 영상과 오버레이의 기준점 */
+    width: 96%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 영상이 삐져나가지 않게 */
+    color: #fff;
+    margin: 100px auto;
+    border-radius: 20px;
+}
+/* 영상 컨테이너 */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* 가장 뒤로 보내기 */
+}
+
+.back-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 중요: 영상 비율 유지하며 꽉 채움 */
+}
+
+/* 어두운 오버레이 (영상이 밝으면 글자가 안 보이므로 필수) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05); /* 숫자를 조절해 밝기 조절 */
+    z-index: -1; /* 영상보다는 위, 글자보다는 아래 */
+}
+
+/* 중앙 콘텐츠 */
+.hero-content {
+    text-align: center;
+    z-index: 1; /* 가장 위로 올림 */
+}
+
+.hero-content h1 {
+    font-size: 5rem; /* 시안에 맞춰 조절 */
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    padding-top: 50px;
+}
+.hero-content p{
+    font-size: 30px;
+    margin-bottom: 70px;
+}
+.hero-content .view-project {
+    display: inline-flex; /* 텍스트와 화살표(⌵) 수직 중앙 정렬 */
+    justify-content: center;
+    align-items: center;
+    width: 170px; /* 버튼의 지름 (동그란 원의 크기) */
+    height: 170px; 
+    border-radius: 50%; /* 완벽한 원형 생성 */
+    
+    /* 시안처럼 폰트 스타일링 */
+    font-family: 'Montserrat', sans-serif; /* 영문 Montserrat 폰트 사용 추천 */
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px; /* 자간을 살짝 벌려 세련미 추가 */
+    text-decoration: none; /* a 태그 밑줄 제거 */
+    
+    /* 6. 시안처럼 테두리 및 배경 설정 (호버 전) */
+    border: 1px solid rgba(255, 255, 255, 0.9); /* 연한 흰색 테두리 */
+    background-color: transparent; /* 투명 배경 */
+    color: #fff; /* 글자색 흰색 */
+    
+    /* 7. 트랜지션 (호버 시 부드러운 변화) */
+    transition: all 0.5s ease;
+    
+    cursor: pointer;
+    position: relative;
+}
+/* 8. 호버 시 효과 (색상이 차오르는 느낌) */
+.view-project:hover {
+    border-color: #007AFF; /* 테두리 색상 파란색으로 변경 */
+    color: #fff; /* 글자색 흰색 유지 */
+    box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3); /* 은은한 파란색 그림자 추가 */
+}
+
+/* =========================================
+   9. 호버 시 배경색이 차오르는 가상 요소 (After)
+   ========================================= */
+.view-project::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* 처음에는 중앙에서 크기가 0 */
+    width: 100%;
+    height: 100%;
+    background-color: #007AFF; /* 차오를 파란색 */
+    border-radius: 50%; /* 원형 유지 */
+    z-index: -1; /* 텍스트보다 뒤에 배치 */
+    transition: all 0.4s ease; /* 호버 시 나타나는 속도 */
+}
+
+/* 10. 호버 시 가상 요소 크기 키우기 */
+.view-project:hover::after {
+    transform: translate(-50%, -50%) scale(1); /* 크기가 100%로 확대되며 색이 차오름 */
+}
+/*------about-me------------*/
+.about-me {
+    padding: 10px 0; /* 위아래 섹션 여백 */
+}
+
+/* 1. 상단 영역: 2단 레이아웃 */
+.about-top {
+    display: flex;
+    justify-content: space-between; /* 좌우 끝으로 밀기 */
+    align-items: flex-start;
+    margin-bottom: 80px; /* 상단과 하단 사이 간격 */
+}
+
+.about-top h2 {
+    font-size: 60px; /* 시안처럼 큼직하게 */
+    font-weight: bold;
+    flex: 1; /* 왼쪽 공간 차지 */
+}
+
+.about-top .intro-text {
+    flex: 1.1; /* 소개글 공간을 제목보다 조금 더 넓게 */
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* 2. 하단 영역: 3단 레이아웃 */
+.about-bottom {
+    display: flex;
+    justify-content: space-between; /* 3개 요소를 균등 간격으로 */
+    gap: 15%; /* 박스 사이 간격 */
+    /* border-top: 1px solid #000; 시안에 있는 검정 구분선 */
+    padding-top: 20px;
+}
+
+/* 3단 각각의 박스 설정 */
+.about-bottom > div {
+    flex: 1; /* 3개가 정확히 1:1:1 비율로 나뉨 */
+}
+
+.about-bottom h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.about-bottom ul {
+    list-style: none; /* 불렛 제거 */
+    padding: 0;
+}
+
+.about-bottom li {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.about-me .about-top .intro-text b{
+    font-size: 25px;
+    font-weight: 600;
+}
+.about-me .about-top .intro-text p{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+
+.me-more {
+    display: inline-block; /* 이동 효과를 위해 블록 요소 성질을 줍니다 */
+    text-decoration: none;
+    color: #007AFF; /* 원하는 색상으로 변경 */
+    font-weight:400;
+    transition: transform 0.3s ease; /* 0.3초 동안 부드럽게 움직이도록 설정 */
+}
+
+/* 마우스를 올렸을 때(hover) 효과 */
+.me-more:hover {
+    opacity: 0.7;
+    transform: translateX(10px); /* 오른쪽으로 10px 이동 */
+}
+
+/*------skills------------*/
+.skills {
+    text-align: center;
+    width: 100%;
+    overflow: hidden; 
+    padding: 130px 0 100px; /* 위아래 여백을 더 넓게 해서 궤도 공간 확보 */
+}
+.skills h3{
+    font-size: 60px;
+}
+.skills p{
+    padding-top: 10px;
+    font-size: 20px;
+}
+.skills span{
+    color:#3AD5C2 ;
+}
+
+.skills-wrapper {
+    display: flex;
+    align-items: center;
+    height: 550px; /* 타원이 그려질 전체 높이를 넉넉히 잡습니다 */
+    overflow: visible;
+}
+
+.skill-cards {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 70px; /* 간격은 70px 유지 */
+    will-change: transform;
+    width: max-content; /* 자식 요소 너비만큼 길어지게 설정 */
+}
+
+.skill-cards li {
+    width: 210px; /* 카드 크기를 적절히 조절 */
+    flex-shrink: 0;
+}
+.skill-cards li img {
+    width: 100%;
+    /* 3. 디자인의 생명인 보더 레디우스 추가 */
+    border-radius: 30px; 
+    /* 이미지 하단이 삐져나오지 않게 방지 */
+    overflow: hidden;
+    /* 약간의 입체감을 위한 은은한 그림자 */
+    /* box-shadow: 0 15px 35px rgba(0,0,0,0.1); */
+    display: block;
+}
+
+
+/*------UX&UI------------*/
+/* UXUI 섹션 전체 스타일 */
+/* 1. 리스트 및 아이템 기본 레이아웃 */
+.uxui-section{
+    padding: 100px 0 120px;
+}
+
+
+.uxui-header {
+    width: 100%;
+    text-align: center; /* 텍스트 중앙 */
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 내부 요소들 가로 중앙 */
+    justify-content: center;
+}
+
+.uxui-header h3 {
+    font-size: 60px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.uxui-header p {
+    font-size: 20px;
+    margin: 0;
+}
+
+.uxui-header p span {
+    color: #3AD5C2;
+}
+
+/* 2. 리스트 레이아웃 */
+.uxui-list {
+    display: flex;
+    flex-direction: column;
+    gap: 150px; 
+}
+
+.uxui-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 지그재그 교차 설정 */
+.uxui-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* 3. 비디오 박스 (요청 수치: 640px + 5px = 645px) */
+.uxui-video-box {
+    flex: 0 0 645px; /* 645px로 확장 */
+    width: 645px;
+    height: 430px; /* 높이는 430px 유지 */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    background-color: #000;
+}
+
+.uxui-video-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 4. 텍스트 박스 */
+.uxui-text-box {
+    flex: 0 1 470px;
+    text-align: left;
+}
+
+.project-subtitle {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 10px;
+    word-break: keep-all;
+}
+
+.project-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #111;
+}
+
+.project-description {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #555;
+    margin-bottom: 30px;
+    word-break: keep-all;
+}
+
+/* 5. 파란색 버튼 디자인 & 호버 효과 (유지) */
+.uxui-btn-group {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-fill {
+    display: inline-block;
+    background-color: #007AFF;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-fill:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,122,255,0.3);
+}
+
+.btn-outline {
+    display: inline-block;
+    border: 1px solid #007AFF;
+    color: #007AFF;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: rgba(0, 122, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+/* 6. 반응형 모바일 */
+@media (max-width: 1024px) {
+    .uxui-item, .uxui-item:nth-child(even) {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 20px;
+    }
+    .uxui-video-box {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 645 / 430;
+        flex: 0 0 auto;
+    }
+    .uxui-text-box {
+        max-width: 100%;
+        text-align: center;
+    }
+    .uxui-btn-group {
+        justify-content: center;
+    }
+}
+
+
+
+
+
+/*------web------------*/
+/* 1. 섹션 전체 레이아웃 */
+.web {
+    padding: 0 50px 0;
+    text-align: center;
+}
+
+.web h3 {
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.web p {
+    padding-top: 10px;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+.web span{
+    color: #3AD5C2;
+}
+
+/* 2. 프로젝트 리스트 (2x2 그리드 설정) */
+.web .projects {
+    display: flex;
+    flex-wrap: wrap; /* 자식이 많으면 다음 줄로 넘김 */
+    justify-content: space-between;
+    gap: 60px 40px; /* 상하 간격 60px, 좌우 간격 40px */
+}
+
+/* 3. 개별 프로젝트 아이템 (너비를 50%에서 gap을 뺀 만큼 설정) */
+.web-project-item01 {
+    width: calc(50% - 20px); /* 한 줄에 두 개씩 배치 */
+    text-align: left;
+}
+
+.web-project-item01 img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    
+}
+
+
+.web-project-item01 h4 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.web-project-item01 p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 5px; /* 설명 텍스트 간격 조절 */
+    color: #333;
+}
+
+/* 4. 버튼 커스텀 (Web 섹션은 버튼이 하나이므로 정렬 조정) */
+.web .btns {
+    margin-top: 20px;
+    display: flex;
+}
+
+.web .btns .blue-btn {
+    width: 140px; /* 버튼이 너무 길지 않게 고정 너비 지정 */
+    padding: 12px 0;
+    border-radius: 10px;
+    background-color: #007AFF;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+.web .btns .blue-btn:hover {
+    background-color: #0056b3;
+}
+/*------work------------*/
+/* 1. 섹션 기본 설정 */
+/* 1. 섹션 전체 레이아웃 */
+
+.commercial-work {
+    padding: 30px 0 100px;
+    text-align: center;
+}
+.commercial-work h3{
+    font-weight: 800;
+}
+
+.commercial-work .container > p{
+    padding-top: 10px;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+.commercial-work .container > p span{
+    color: #3AD5C2;
+}
+
+/* 2. 프로젝트 리스트 (2단 배열 설정) */
+.commercial-work .project {
+    display: flex;
+    flex-wrap: wrap; /* 2개 넘어가면 다음 줄로 */
+    justify-content: space-between;
+    gap: 80px 40px; /* 상하 간격을 80px로 넓게 잡아서 프로젝트 간 독립성 부여 */
+}
+
+/* 3. 개별 아이템 (50%에서 간격 절반 뺀 값) */
+.work-project-item01 {
+    width: calc(50% - 20px); /* 2열 배치의 핵심 */
+    text-align: left;
+}
+
+.work-project-item01 img {
+    width: 100%;
+    /* 2단일 때는 4:3이나 16:9 비율이 시원해 보입니다 */
+    aspect-ratio: 16 / 10; 
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    transition: 0.3s ease;
+}
+
+
+.work-project-item01 h4 {
+    font-size: 28px; /* 이미지가 커진 만큼 제목 크기도 살짝 키웠습니다 */
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.work-project-item01 p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+/* 4. 버튼 정렬 */
+.commercial-work .blue-btn {
+    width: 140px;
+    padding: 12px 0;
+    border-radius: 10px;
+    background-color: #007AFF;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.blue-btn:hover {
+    background-color: #0056b3;
+}
+/*------footer------------*/
+
+footer{
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+}
+footer .myinfo{
+    margin-top: 50px;
+    padding-top: 50px;
+    border-top: 1px solid #666;
+    font-size: 14px;
+    color: #6e6e6e;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+
+@keyframes blink {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: #007AFF; }
+}
+
+
+
+
+
+
+
+/*---------------*/
+@media screen and (max-width: 1200px) {
+    /* 1. 헤더 내부 여백과 간격을 좁힙니다 */
+    header .container {
+        padding: 0 20px; /* 양옆 여백을 살짝 줄임 */
+        justify-content: space-between; /* 양 끝으로 밀착 */
+    }
+
+    /* 2. 네비게이션 메뉴 사이의 간격을 줄입니다 */
+    header nav ul {
+        gap: 15px; /* 기존에 40~50px였다면 절반 정도로 축소 */
+    }
+
+    header nav ul li a {
+        font-size: 16px; /* 폰트 크기를 1~2px 줄여서 공간 확보 */
+    }
+
+    /* 3. 전화번호 영역 찌부 방지 */
+    .header-phone {
+        font-size: 14px; /* 번호 폰트 크기 조절 */
+        white-space: nowrap; /* ★핵심: 번호가 절대 두 줄로 꺾이지 않게 고정 */
+        letter-spacing: -0.5px; /* 자간을 살짝 좁혀서 공간 확보 */
+    }
+
+    .nav-menu{
+        gap: 20px;
+    }
+    h1 a{
+        font-size: 18px;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    /* 내비게이션(메뉴) 숨기기 */
+    header nav {
+        display: none;
+    }
+}
