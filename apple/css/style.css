@@ -1,0 +1,1108 @@
+/* reset */
+* {margin: 0;padding: 0; box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+    html,
+    body {
+    position: relative;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: black;
+    }
+
+
+
+/**/
+header{
+    background-color: black;
+}
+.header-inner{
+    color: #ccc;
+    width: 1024px;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+}
+.header-inner ul{
+    display: flex;
+}
+.header-inner ul li a{
+    display: block;
+    padding: 9px 8px;
+    font-size: 12px;
+}
+
+header img{
+    width: 24px;
+}
+
+
+
+
+
+
+
+
+    /*크레딧- 네비게이션*/
+    .sub-nav{
+        background-color: #1d1d1f;
+    }
+    .sub-nav p{
+        text-align: center;
+        color: white;
+        padding: 16px 50px;
+        font-size: 14px;
+    }
+
+
+    /*  배경 영상 섹션 */
+    .hero {
+        position: relative;
+        width: 100%;
+        height: 91vh; /* 화면 높이 전체 */
+        overflow: hidden;
+        background-color: black;
+        text-align: center;
+        }
+
+        .hero video {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        width: 81%;
+        object-fit: cover;
+        transform: translate(-50%, 0%);
+        z-index: 0;
+    }
+    /**/
+    .hero .buy {
+        position: relative;
+        z-index: 1;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        padding-bottom: 70px;
+    }
+    .hero .buy>div{
+        margin-bottom: 13px;
+    }
+
+    .hero .buy .btn{
+        font-size: 19px;
+        background-color: #0066cc;
+        padding: 8px 15px;
+        border-radius: 30px;
+        
+    }
+    .hero .buy p{
+        font-size: 19px;
+    }
+
+
+
+    /*섹션2*/
+    .video-banner{
+        width: 100%;
+        background-color: #1d1d1f;
+        padding: 160px 0 210px;
+    }
+    .inner{
+        width: 70%;
+        margin: 0 auto;
+
+    }
+
+    .video-banner .video-tit{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 80px;
+    }
+    .video-banner .video-tit h2{
+        font-size: 40px;
+        color: #f5f5f5;
+    }
+
+    .video-banner .video-tit span{
+        color: #2997ff;
+        font-size:15px ;
+        cursor: pointer;
+    }
+
+
+    /*비디오*/
+    .video-banner .swiper-slide video{
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+        border-radius: 30px;
+    }
+    
+
+    /**/
+    .swiper {
+      width: 100%;
+      /* border: 1px solid hotpink; */
+      border-radius: 50px;
+      overflow: hidden; 
+      position: relative;
+      height: 72vh;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #1d1d1f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-slide:nth-child(2) h3{
+        
+        top: 80%;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+    /**/
+    .swiper-slide h3{
+        position: absolute;
+        top:15%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color:white;
+        font-size: 26px;
+    }
+
+    .swiper-pagination{
+    }
+
+    /* 🔸 불릿(점) 스타일 */
+.video-banner .swiper-pagination-bullet {
+  width: 8px;        /* ← 크기 조절 */
+  height: 8px;       /* ← 크기 조절 */
+  background: #fff;   /* ← 완전 흰색 */
+  opacity: 0.6;       /* 살짝 투명도 */
+  transition: all 0.3s ease;
+  margin: 0 20px;
+
+}
+
+/* 🔸 활성화된 불릿 (현재 슬라이드) */
+.video-banner .swiper-pagination-bullet-active {
+  opacity: 1;         /* 완전 불투명 */
+  transform: scale(1.6); /* 살짝 커지게 */
+}
+
+
+
+
+
+
+    /**/
+    .video-banner .swiper {
+  overflow: visible; /* 페이지네이션이 밖으로 나올 수 있게 */
+  position: relative;
+}
+
+.video-banner .swiper-pagination {
+  position: absolute;
+  bottom: -40px; /* 🔸 비디오 아래로 내림 (필요시 값 조절) */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10; /* 비디오 위로 보이게 */
+}
+
+
+/**/
+
+
+
+    /*sec3---------------------------------------------*/
+    
+    .sec03{
+        background-color: black;
+        width: 100%;
+        padding: 160px 0 210px;
+    }
+    
+    .sec03 .inner{
+        text-align: center;
+    }
+    .sec03 h2{
+        color: #ff791b;
+        font-size: 24px;
+    }
+    .sec03 .sec03-tit{
+        font-size: 55px;
+        font-weight: bold;
+        color: white;
+        margin-top: 16px;
+    }
+
+    .sec03 .sec03-text{
+        color: #888;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 27px;
+        margin-top: 24px;
+        font-size: 20px;
+    }
+
+    .sec03 video{
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    .more-design{
+        background: #1e1e20;
+        padding: 18px 24px;
+        border-radius: 30px;
+        color: #f5f5f5;
+        font-weight: bold;
+    }
+    .more-design img{
+        padding-left: 10px;
+    }
+
+    /*sec4---------------------------------------------*/
+
+    .sec04{
+        background: rgb(24, 24, 24);
+        color: #fff;
+        padding: 160px 0 210px;
+        min-height: 100vh;
+        background: linear-gradient(black, rgb(24, 24, 24));
+        overflow-x: hidden;
+        
+    }
+    /*3d뷰어*/
+    model-viewer {
+      width: 100%;
+      max-width: 100%;
+      height: 80vh; /* ✅ 박스 높이 조정 */
+      background: radial-gradient(circle at center, #111, #000);
+      border-radius: 30px;
+      box-shadow: 0 30px 60px rgba(255, 255, 255, 0.1);
+      transition: all 0.6s ease;
+    }
+    /* Apple 느낌의 subtle hover effect */
+    model-viewer:hover {
+      transform: scale(1.02);
+      box-shadow: 0 40px 80px rgba(255, 255, 255, 0.15);
+    }
+
+
+
+    .sec04 .inner{
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+            
+    }
+
+    .sec04 .tit{
+        text-align: center;
+        padding-bottom: 40px;
+    }
+    .sec04 .tit h2{
+        color: #ff791b;
+        font-size: 24px;
+    }
+    .sec04 .tit p{
+        font-size: 55px;
+        font-weight: bold;
+        color: white;
+        margin:16px 0 24px;
+    }
+    .sec04 .tit span{
+        color: #0066cc;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+
+
+     /*sec05-------------------------------*/
+     .sec05{
+        padding: 160px 0 210px;
+        background-color: black;
+     }
+     .sec05-tit{
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 80px;
+     }
+     .sec05-tit h2{
+        color: #ff791b;
+        font-size: 24px;
+     }
+     .sec05-tit p{
+        color: white;
+        font-size: 80px;
+        font-weight: bold;
+     }
+     /*sec05-------------------------------*/
+     .sec05-contetnt{
+        display: flex;
+        gap:5%;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: bold;
+
+     }
+     .sec05-contetnt .sec05-left{
+        flex: 2;
+     }
+     .sec05-contetnt .sec05-left video{
+        width: 100%;
+     }
+
+     .sec05-contetnt .sec05-right{
+        flex: 1;
+        font-size: 20px;
+        color: #86868b
+     }
+     .sec05-contetnt .sec05-right p:first-child{
+        margin-bottom: 60px;
+     }
+     .sec05-contetnt .sec05-right span{
+        font-size: 48px;
+        color: #ff791b;
+     }
+
+
+     .sec05 .text-large-center{
+        color: #86868b;
+        font-size: 20px;
+        font-weight: bold;
+     }
+     .sec05 .text-large-center p{
+        
+        margin: 0 auto;
+        padding: 160px 15% ;
+        text-align: center;
+     }
+      .sec05 .text-large-center span{
+        color: white;
+      }
+      /*sec05----라디오버튼---------------------------*/
+      .gallery {
+        position: relative;
+        width: 70%;
+        margin: 0px auto;
+        text-align: center;
+        }
+
+        .gallery .photos{
+            margin-top: 30px;
+        }
+        .gallery img {
+        width: 85%;
+        margin: 0px auto;
+        display: none;
+        border-radius: 8px;
+        }
+
+        /* input을 숨기고, label 클릭 시 선택되게 */
+        .sec05 input[type="radio"] {
+        display: none;
+        }
+
+        /* 기본값: 200mm 선택 */
+        #img200:checked ~ .photos img[data-id="200"],
+        #img100:checked ~ .photos img[data-id="100"],
+        #img48:checked ~ .photos img[data-id="48"],
+        #img35:checked ~ .photos img[data-id="35"],
+        #img28:checked ~ .photos img[data-id="28"],
+        #img24:checked ~ .photos img[data-id="24"],
+        #img13:checked ~ .photos img[data-id="13"],
+        #close-up:checked ~ .photos img[data-id="close-up"] {
+        display: block;
+        }
+
+        .sec05 .buttons {
+        margin-top: 15px;
+        display: inline-flex;
+        gap: 6px;
+        background: #111;
+        padding: 8px 14px;
+        border-radius: 40px;
+        }
+
+        .sec05 label {
+        cursor: pointer;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 16px;
+        transition: 0.2s;
+        color: #aaa;
+        background-color: #333336;
+        margin: 0 4px;
+        padding: 8px 14px;
+        font-weight: 400;
+        }
+
+        .sec05 input:checked + label {
+        background: #0066cc;
+        color: white;
+        font-weight: bold;
+        }
+        
+
+
+        /**/
+        .lens-8{
+            margin-top: 160px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .lens-8 video{
+            width: 100%;
+        }
+        .lens-8 p{
+            text-align: center;
+            color: #86868b;
+        }
+        .lens-8 p span{
+            color: white;
+        }
+
+        .lens-8 ul{
+            display: flex;
+            justify-content: space-between;
+            color: #86868b;
+            margin-top: 120px;
+        }
+        .lens-8 ul li{
+            width: 30%;
+        }
+        .lens-8 ul li h3{
+            color: white;
+            font-size: 20px;
+            margin-bottom: 21px;
+            border-bottom: 1px solid #86868b;
+            padding-bottom: 21px;
+        }
+        .lens-8 ul li p{
+            font-size: 17px;
+            text-align: left;
+            padding-bottom: 18px;
+        }
+
+        /*sec06----------------*/
+        .sec06{
+            text-align: center;
+            background: black;
+            padding-bottom: 200px;
+
+        }
+        .sec06 .tit{
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .sec06 .text{
+            color: #86868b;
+            font-weight: 500;
+            width: 70%;
+            margin: 0 auto;
+            font-size: 20px;
+            
+
+        }
+
+
+
+        /*★영상 4개 ------------------------*/
+    .tabs {
+      display: flex;
+      position: relative;
+      border-radius: 12px;
+      background-color: #333336;
+      margin: 40px auto;
+      padding: 4px;
+      width: 50%;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tabs input[type="radio"] {
+      display: none;
+    }
+
+    .tab-label {
+      padding: 8px 20px;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+      font-weight: 500;
+      color: white;
+      transition: color 0.3s ease;
+      text-align: center;
+      font-size: 12px;
+      width: 25%;
+      
+    }
+    .tab-label:nth-child(2){
+      top: -8px;
+    }
+
+
+    .tab-label img{
+      height: 25px;
+    }
+
+    .tab-label:hover {
+      color: #0071e3;
+    }
+
+    /* 슬라이딩 하이라이트 */
+    .slider {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 25%; /* 탭 4개이므로 25% */
+      height: calc(100% - 8px);
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+      z-index: 1;
+    }
+
+    /* 비디오 wrapper */
+    .phone-wrapper {
+      position: relative;
+      width: 300px;
+      margin: 0px auto;
+      border-radius: 40px;
+      overflow: hidden;
+    }
+
+    /* 이미지 */
+    .phone-img {
+      width: 100%;
+      display: block;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* 비디오 */
+    .phone-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      display: none;
+      border-radius: 50px;
+    }
+
+    /* 선택된 탭의 스타일 */
+    .tabs input[type="radio"]:checked + .tab-label {
+    color: black; /* 글씨 색상 변경 */
+    font-weight: bold; /* 글씨 두껍게 */
+    }
+
+    /* 선택된 탭의 아이콘 색상 변경 */
+    .tabs input[type="radio"]:checked + .tab-label img {
+    filter: none; /* 기본 필터 적용 */
+    } 
+
+
+
+
+
+    /*★sec07--프로라 불리는데이유 - 영상부분----------------------*/
+    /* --- sec07 스타일 --- */
+
+.sec07 .video-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec07 .scene {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center center;
+    transition: transform 0.1s linear;
+}
+
+.sec07 video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    border-radius: 0;
+    transition: border-radius 0.2s linear;
+}
+
+.sec07 .png-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;        /* width 자동 */
+    height: 110%;       /* 높이 기준 */
+    max-width: 100%;    /* 너무 커지지 않도록 */
+    max-height: 100%;   /* 너무 커지지 않도록 */
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 5;
+    pointer-events: none;
+    transition: transform 0.1s linear;
+}
+
+.sec07 .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    color: #fff;
+    font-size: 44px;
+    font-weight: 700;
+    text-align: center;
+    z-index: 10;
+    pointer-events: none;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    transition: opacity 0.1s linear, transform 0.05s linear;
+}
+
+
+
+
+
+/**/
+/* --- sec07 스타일 --- */
+.sec07 {
+    background: black;
+}
+
+.sec07 .video-wrap {
+    height: 100vh; /* 화면 높이만큼 */
+}
+.sec07 .scene {
+    top: 0;        /* 위쪽 기준 */
+    transform: translateX(-50%) scale(1);
+}
+
+.sec07 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* 비율 유지, 화면 가득 */
+    z-index: 1;
+}
+
+
+
+
+.sec07 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transition: transform 0.2s ease-out;
+}
+
+
+/**/
+.sec07-tit {
+    text-align: center;
+    background-color: black;
+    padding: 120px 0;
+}
+.sec07-tit p{
+    color: #86868b;
+    font-weight: 500;
+    width: 70%;
+    margin: 0 auto;
+    font-size: 20px;
+
+    
+}
+.sec07-tit span{
+    color: white;
+}
+
+
+/*--------------sec08-----------*/
+
+.sec08{
+    background-color: black;
+    padding: 160px 0;
+}
+.sec08 .inner{
+    padding: 80px 40px 120px;
+    border-radius: 20px;
+    background-color: #121214;
+    color: white;
+}
+
+.sec08 .upgrade-txt{
+    color: white;
+}
+.sec08 .upgrade-txt h2{
+    font-size: 44px;
+}
+.sec08 .upgrade-txt p{
+    font-size: 20px;
+    margin: 32px 0;
+}
+
+.sec08 ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+    padding: 0 30px;
+}
+
+.sec08 ul li{
+    background-color: black;
+    border-radius: 20px;
+    width: 30.5%;
+    height: 300px;
+    color: #86868b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    overflow: hidden;
+}
+.sec08 ul li:nth-child(1) img{
+    padding-top: 20px;
+}
+.sec08 ul li:nth-child(2) span{
+    color: white;
+    font-size:44px ;
+}
+.sec08 ul li:nth-child(2) img{
+    
+    padding-bottom: 9px;
+}
+
+.sec08 ul li:nth-child(3) img{
+    width: 100%;
+    padding-top: 20px;
+}
+.sec08 ul li:nth-child(4) span{
+    color: white;
+    font-size:44px ;
+}
+.sec08 ul li:nth-child(5) p{
+    padding: 69px 0 20px;
+}
+.sec08 ul li:nth-child(6){
+    
+}
+
+
+/*--------------sec09-----------*/
+.sec09{
+    background-color: black;
+    color: white;
+    padding: 120px 0;
+    /* border-top: 1px solid #86868b; */
+}
+.sec09 h2{
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: white;
+}
+.sec09 ul{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.sec09 ul li{
+    margin-bottom: 20px;
+}
+.sec09 ul li a{
+    width: 100%;
+    padding: 12px 18px;
+    border: 2px solid #4b4b4b;
+    border-radius: 50px;
+}
+
+
+/*footer*/
+footer{
+    font-size: 14px;
+    background-color: #000;
+    padding-bottom: 120px;
+}
+footer p{
+    color: #86868b;
+    margin-bottom: 10px;
+}
+
+
+/*--햄버거 메뉴------------------------*/
+
+.hamburger-menu {
+  display: none;
+  position: fixed; /* 화면 고정 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 9999; /* 제일 위로 */
+  color: #E8E8ED;
+  overflow-y: auto;
+}
+.hamburger-menu ul{
+    padding-top: 80px;
+}
+
+.hamburger-menu ul li{
+    padding: 8px 40px;
+    
+}
+
+.hamburger-menu ul li a{
+    font-size: 23px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+.hamburger-menu ul li img{
+    width: 10px;
+}
+
+
+.menu-close{
+    position: absolute;
+    top: 25px;
+    right: 40px;
+}
+
+.hamburger-menu ul li:hover{
+    background-color: #1d1d1f;
+}
+
+
+/* 메뉴가 열렸을 때 */
+.hamburger-menu.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+/* 닫기 버튼 */
+.menu-close {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  cursor: pointer;
+}
+
+/* 메뉴 애니메이션 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*애니메이션*/
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.98);
+    filter: blur(4px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(5px) scale(1.02);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.sub-nav {
+  animation: slide-down 5s cubic-bezier(.2,.9,.22,1) forwards;
+}
+
+
+
+
+/*------------------------------------------*/
+@media (max-width: 1920px) {
+    header .nav-icon li:last-of-type {
+        display: none;
+    }
+    .sec01 img{
+        display: none;
+    }
+
+    .hamburger-menu{
+        display: none;
+    }
+}
+
+
+/**/
+@media (max-width: 1024px) {
+  .header-inner{
+    border: none;
+    width: 100%;
+  }
+  
+  /*sec01*/
+  .sec01 video {
+    display: none;
+  }
+  .sec01 img{
+    display: block;
+    width: 47%;
+    bottom: 0;
+    position: absolute;
+    left: 50%;
+    margin: 0 auto;
+    transform: translate(-50%, 5%);
+    }
+
+
+  
+    /*sec05*/
+    .sec05 .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px 0px;
+    }
+    /*sec06*/
+    .sec06 .tabs{
+        width: 90%;
+    }
+
+
+    /*sec08*/
+   .sec08 ul li{
+    width: 100%;
+   }
+   .sec08 ul li:nth-child(3) p{
+    margin-top: 30px;
+   }
+
+
+
+}
+
+
+
+
+/**/
+@media (max-width: 768px){
+    .inner{
+        width: 85%;
+    }
+    header .nav-icon li:last-of-type {
+        display: block;
+    }
+    header .nav{
+        display: none;
+    }
+    .sec01 img{
+        width: 60%;
+    }
+
+    .hero{
+    height: 85vh;
+  }
+
+}
+
+/**/
+@media (max-width: 440px){
+
+    .sec01 img{
+        width: 87%;
+    }
+
+
+    
+    /*sec02*/
+  .sec02 .swiper-slide h3{
+    font-size: 18px;
+  }
+
+  .hero{
+    height: 70vh;
+  }
+}
+
+
+
